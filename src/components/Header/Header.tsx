@@ -1,20 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+
 import styles from "./styles.module.css";
 
 import logo from "../icons/logo.svg";
 import iconMemo from "../icons/icon_memo.svg";
 import iconChallenge from "../icons/icon_challenge.svg";
 import iconInfo from "../icons/icon_info.svg";
-import iconMenu from "../icons/icon_menu.svg";
-import iconClose from "../icons/icon_close.svg";
+
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const menuItems = [
+    { path: "/my-record", label: "自分の記録" },
+    { path: "/body-weight", label: "体重グラフ" },
+    { path: "/diary", label: "目標" },
+    { path: "/selected-course", label: "選択中のコース" },
+    { path: "/column-list", label: "コラム一覧" },
+    { path: "/settings", label: "設定" },
+  ];
 
   return (
     <header className={styles.header}>
@@ -46,43 +49,7 @@ export default function Header() {
             <img src={iconInfo} alt="" className={styles.icon} />
             お知らせ
           </NavLink>
-
-          <div className={styles.menuContainer}>
-            <button
-              className={styles.menuButton}
-              aria-label="menu"
-              onClick={toggleMenu}
-            >
-              <img
-                src={isMenuOpen ? iconClose : iconMenu}
-                alt="Menu toggle"
-                className={styles.icon}
-              />
-            </button>
-
-            {isMenuOpen && (
-              <div className={styles.dropMenu}>
-                <NavLink to="/my-record" className={styles.menuItem}>
-                  自分の記録
-                </NavLink>
-                <NavLink to="/body-weight" className={styles.menuItem}>
-                  体重グラフ
-                </NavLink>
-                <NavLink to="/diary" className={styles.menuItem}>
-                  目標
-                </NavLink>
-                <NavLink to="/selected-course" className={styles.menuItem}>
-                  選択中のコース
-                </NavLink>
-                <NavLink to="/column-list" className={styles.menuItem}>
-                  コラム一覧
-                </NavLink>
-                <NavLink to="/settings" className={styles.menuItem}>
-                  設定
-                </NavLink>
-              </div>
-            )}
-          </div>
+          <HamburgerMenu menuItems={menuItems} />
         </nav>
       </div>
     </header>

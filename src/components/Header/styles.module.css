@@ -26,12 +26,21 @@
 .logo {
   text-decoration: none;
   color: var(--primary-400);
+  display: flex;
+  align-items: center;
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  gap: 48px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+  }
 }
 
 .navLink {
@@ -74,49 +83,4 @@
 
 .japanese {
   font-family: "Noto Sans JP", sans-serif;
-}
-
-.menuButton {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.menuContainer {
-  position: relative; /* This is the new anchor for the dropdown */
-}
-
-.dropMenu {
-  position: absolute;
-  top: 48px; /* Position relative to the container */
-  right: 0;  /* Align to the right edge of the container (the button) */
-  width: 280px;
-  background: var(--gray-400);
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
-
-.menuItem {
-  display: block;
-  padding: 23px 32px;
-  color: var(--white-light);
-  text-decoration: none;
-  font-size: 18px;
-  transition: background-color 0.2s;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.menuItem:first-child {
-    border-top: none;
-}
-.menuItem:last-child {
-  border-bottom: none;
-}
-
-.menuItem:hover {
-  background-color: var(--dark-500);
 }
