@@ -66,3 +66,26 @@ body {
 
 .top-actions { position: fixed; right: 24px; bottom: 24px; }
 .fab { width: 48px; height: 48px; border-radius: 9999px; border: 1px solid #dadada; background: #fff; display:grid; place-items:center; cursor:pointer; }
+
+/* Icon helpers */
+.icon { display:inline-block; width: 20px; height: 20px; }
+.icon-lg { width: 24px; height: 24px; }
+.nav-link img { filter: none; }
+
+/* Notification badge on nav icon */
+.nav-link.badged {
+  position: relative;
+}
+.nav-link.badged::after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--primary-500, #f97316);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  line-height: 1;
+}
