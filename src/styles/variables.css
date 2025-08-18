@@ -1,0 +1,15 @@
+:root {
+  --white-light: #ffffff;
+  --primary-300: #FFCC21; /* プライマリー/300 */
+  --primary-400: #FF963C; /* プライマリー/400 */
+  --primary-500: #EA6C00; /* プライマリー/500 */
+  --secondary-300: #8FE9D0; /* セカンダリー/300 */
+  --dark-600: #2E2E2E;     /* ブラック/dark/600 */
+  --dark-500: #414141;     /* ブラック/dark/500/text & header/footer bg */
+  --gray-400: #777777;     /* グレー/400 */
+
+  --gradient-primary: linear-gradient(90deg, var(--primary-300), var(--primary-400));
+
+  --font-jp: 'Noto Sans JP', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-en: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
