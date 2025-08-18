@@ -1,17 +1,15 @@
 import { useState } from "react";
 
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import AppRoutes from "./routes/AppRoutes";
-import Footer from "./components/Footer";
-
-import "./App.css";
+// import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="app">
-      <Header />
+      {/* <Header /> */}
       <AppRoutes />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
