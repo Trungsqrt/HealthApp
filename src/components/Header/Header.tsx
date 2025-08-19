@@ -11,13 +11,17 @@ import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 export default function Header() {
   const menuItems = [
-    { path: "/my-record", label: "自分の記録" },
+    { path: "/record", label: "自分の記録" },
     { path: "/body-weight", label: "体重グラフ" },
     { path: "/diary", label: "目標" },
     { path: "/selected-course", label: "選択中のコース" },
-    { path: "/column-list", label: "コラム一覧" },
+    { path: "/column", label: "コラム一覧" },
     { path: "/settings", label: "設定" },
   ];
+
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) => {
+    return isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
+  };
 
   return (
     <header className={styles.header}>
@@ -31,12 +35,12 @@ export default function Header() {
         </Link>
 
         <nav className={`${styles.nav} ${styles.japanese}`}>
-          <NavLink to="/record" className={styles.navLink}>
+          <NavLink to="/record" className={getNavLinkClass}>
             <img src={iconMemo} alt="" className={styles.icon} />
             自分の記録
           </NavLink>
 
-          <NavLink to="#" className={styles.navLink}>
+          <NavLink to="/column" className={getNavLinkClass}>
             <img src={iconChallenge} alt="" className={styles.icon} />
             チャレンジ
           </NavLink>

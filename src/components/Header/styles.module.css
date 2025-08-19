@@ -55,6 +55,10 @@
   position: relative;
 }
 
+.navLink.active {
+  color: var(--primary-400);
+}
+
 .navLink.badged::after {
   content: attr(data-badge);
   position: absolute;
