@@ -1,0 +1,31 @@
+@import "../../styles/variables.css";
+
+.button {
+    background-color: var(--dark-600);
+    color: var(--white-light);
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px;
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    color: var(--primary-300);
+}
+
+.divider {
+    width: 56px;
+    border-color: var(--white-light);
+    margin: 8px 0;
+}
+
+.subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+}

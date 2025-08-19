@@ -5,6 +5,7 @@ import MyPage from "./pages/TopPage/TopPage";
 
 import "./index.css";
 import MyRecordPage from "./pages/MyRecordPage/MyRecordPage";
+import ColumnPage from "./pages/ColumnPage/ColumnPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MyPage />} />
           <Route path="/record" element={<MyRecordPage />} />
-          {/* Add other routes here */}
+          <Route path="/column" element={<ColumnPage />} />
         </Routes>
       </main>
       <Footer />

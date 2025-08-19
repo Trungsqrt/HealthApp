@@ -160,7 +160,6 @@ export default function TopPage() {
         </div>
       </div>
 
-      {/* Add TopButton */}
       <TopButton />
     </>
   );

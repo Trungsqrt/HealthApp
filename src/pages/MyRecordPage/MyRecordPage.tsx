@@ -19,6 +19,7 @@ import MyExercise from "../../components/MyExercise/MyExercise"; // New Import
 import recordImage1 from "/images/MyRecommend-1.jpg";
 import recordImage2 from "/images/MyRecommend-2.jpg";
 import recordImage3 from "/images/MyRecommend-3.jpg";
+import ScrollToTopButton from "../../components/TopButton/TopButton";
 
 // --- Mock Data ---
 const bodyChartData = [
@@ -149,6 +150,7 @@ export default function MyRecordPage() {
       <div className={styles.buttonContainer}>
         <Button onClick={loadMoreDiary}>自分の日記をもっと見る</Button>
       </div>
+      <ScrollToTopButton />
     </div>
   );
 }

@@ -1,0 +1,25 @@
+@import "../../styles/variables.css";
+
+.pageContainer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 16px;
+}
+
+.recommendedSection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 56px;
+}
+
+.columnGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin: 24px 0 56px;
+}

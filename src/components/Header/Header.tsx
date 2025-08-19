@@ -31,7 +31,7 @@ export default function Header() {
         </Link>
 
         <nav className={`${styles.nav} ${styles.japanese}`}>
-          <NavLink to="/my-record" className={styles.navLink}>
+          <NavLink to="/record" className={styles.navLink}>
             <img src={iconMemo} alt="" className={styles.icon} />
             自分の記録
           </NavLink>
