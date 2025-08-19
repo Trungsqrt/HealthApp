@@ -45,7 +45,42 @@ const bodyChartData = [
   { name: "5月", value: 6 },
 ];
 
-export default function MyPage() {
+const ProgressCircle = ({ percentage }: { percentage: number }) => {
+  const radius = 85;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className={styles.progressCircle}>
+      <svg className={styles.progressSvg} width="180" height="180">
+        <circle
+          className={styles.progressBg}
+          strokeWidth="4"
+          r={radius}
+          cx="90"
+          cy="90"
+        />
+        <circle
+          className={styles.progressBar}
+          strokeWidth="4"
+          r={radius}
+          cx="90"
+          cy="90"
+          style={{
+            strokeDasharray: circumference,
+            strokeDashoffset: strokeDashoffset,
+          }}
+        />
+      </svg>
+      <div className={styles.progressText}>
+        <span className={styles.progressDate}>05/21&#8195;</span>
+        <span className={styles.progressPercent}>{percentage}%</span>
+      </div>
+    </div>
+  );
+};
+
+export default function TopPage() {
   const [mealData, setMealData] = useState(initialMealData);
 
   const loadMoreMeals = () => {
@@ -54,62 +89,74 @@ export default function MyPage() {
   };
 
   return (
-    <div className={styles.pageContainer}>
-      <section className={styles.topSection}>
-        <div className={styles.mainVisual}>
-          <img src={mainImage} alt="Main visual" className={styles.mainImage} />
-          <div className={styles.progressCircle}>
-            <span className={styles.progressDate}>05/21</span>
-            <span className={styles.progressPercent}>75%</span>
+    <>
+      {/* Full width top section */}
+      <div className={styles.fullWidthContainer}>
+        <div className={styles.topRow}>
+          <div className={styles.mainVisual}>
+            <img
+              src={mainImage}
+              alt="Main visual"
+              className={styles.mainImage}
+            />
+            <ProgressCircle percentage={45} />
+          </div>
+          <div className={styles.chartContainer}>
+            <ResponsiveContainer>
+              <LineChart data={bodyChartData}>
+                <CartesianGrid stroke="#777777" strokeDasharray="3 6" />
+                <XAxis
+                  dataKey="name"
+                  stroke="#FFFFFF"
+                  tickLine={false}
+                  axisLine={false}
+                />
+                <YAxis hide={true} domain={[0, "dataMax + 2"]} />
+                <Tooltip contentStyle={{ backgroundColor: "#2E2E2E" }} />
+                <Line
+                  type="monotone"
+                  dataKey="value"
+                  name="Fat %"
+                  stroke="#FFCC21"
+                  strokeWidth={3}
+                  dot={{ r: 5, fill: "#FFCC21" }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="value"
+                  name="Weight"
+                  stroke="#8FE9D0"
+                  strokeWidth={3}
+                  dot={{ r: 5, fill: "#8FE9D0" }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
         </div>
-        <div className={styles.chartContainer}>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={bodyChartData}>
-              <CartesianGrid stroke="#777777" strokeDasharray="3 6" />
-              <XAxis
-                dataKey="name"
-                stroke="#FFFFFF"
-                tickLine={false}
-                axisLine={false}
-              />
-              <YAxis hide={true} domain={[0, "dataMax + 2"]} />
-              <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="value"
-                stroke="#FFCC21"
-                strokeWidth={3}
-                dot={{ r: 5, fill: "#FFCC21" }}
-              />
-              <Line
-                type="monotone"
-                dataKey="value"
-                stroke="#8FE9D0"
-                strokeWidth={3}
-                dot={{ r: 5, fill: "#8FE9D0" }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </section>
-
-      <section className={styles.hexagonMenu}>
-        <HexagonMenuItem icon={iconKnife} text="Morning" />
-        <HexagonMenuItem icon={iconKnife} text="Lunch" />
-        <HexagonMenuItem icon={iconKnife} text="Dinner" />
-        <HexagonMenuItem icon={iconCup} text="Snack" />
-      </section>
-
-      <section className={styles.mealGrid}>
-        {mealData.map((meal, index) => (
-          <MealCard key={index} image={meal.image} label={meal.label} />
-        ))}
-      </section>
-
-      <div className={styles.buttonContainer}>
-        <Button onClick={loadMoreMeals}>記録をもっと見る</Button>
       </div>
-    </div>
+
+      {/* Centered content */}
+      <div className={styles.pageContainer}>
+        <div className={styles.mainGrid}>
+          <div className={styles.hexagonMenuRow}>
+            <HexagonMenuItem icon={iconKnife} text="Morning" />
+            <HexagonMenuItem icon={iconKnife} text="Lunch" />
+            <HexagonMenuItem icon={iconKnife} text="Dinner" />
+            <HexagonMenuItem icon={iconCup} text="Snack" />
+          </div>
+
+          <div className={styles.mealHistoryContainer}>
+            <div className={styles.mealGrid}>
+              {mealData.map((meal, index) => (
+                <MealCard key={index} image={meal.image} label={meal.label} />
+              ))}
+            </div>
+            <div className={styles.buttonContainer}>
+              <Button onClick={loadMoreMeals}>記録をもっと見る</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
