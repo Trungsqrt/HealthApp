@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--dark-500);
+  padding: 56px 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+}
+
+.link {
+  color: var(--white-light);
+  text-decoration: none;
+  font-size: 11px;
+  font-family: "Noto Sans JP", sans-serif;
+}
