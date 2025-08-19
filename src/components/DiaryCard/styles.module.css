@@ -1,0 +1,29 @@
+@import "../../styles/variables.css";
+
+.card {
+  border: 2px solid var(--gray-400);
+  padding: 16px;
+  width: 231px; /* From design spec */
+  height: 231px; /* From design spec */
+  display: flex;
+  flex-direction: column;
+}
+
+.dateTime {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.content {
+  margin-top: 8px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  /* Truncate text that overflows */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* Adjust this number to show more or less lines */
+  -webkit-box-orient: vertical;
+}

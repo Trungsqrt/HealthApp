@@ -128,3 +128,11 @@
     font-size: 25px;
     font-weight: 300;
 }
+
+/* Add at the bottom of your CSS file */
+:global(.topButton) {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+}

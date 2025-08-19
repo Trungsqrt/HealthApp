@@ -13,6 +13,7 @@ import styles from "./styles.module.css";
 import HexagonMenuItem from "../../components/HexMenuItem/HexMenuItem";
 import MealCard from "../../components/MealCard/MealCard";
 import Button from "../../components/Button/Button";
+import TopButton from "../../components/TopButton/TopButton";
 
 import mainImage from "/images/d01.jpg";
 import iconKnife from "../../components/icons/icon_knife.png";
@@ -157,6 +158,9 @@ export default function TopPage() {
           </div>
         </div>
       </div>
+
+      {/* Add TopButton */}
+      <TopButton />
     </>
   );
 }
