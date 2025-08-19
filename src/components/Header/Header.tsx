@@ -46,7 +46,7 @@ export default function Header() {
           </NavLink>
 
           <NavLink
-            to="/column"
+            to="/#"
             className={`${styles.navLink} ${styles.badged}`}
             data-badge="1"
           >
