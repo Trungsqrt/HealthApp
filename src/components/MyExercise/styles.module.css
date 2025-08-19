@@ -1,0 +1,79 @@
+@import "../../styles/variables.css";
+
+.exerciseContainer {
+    background-color: var(--dark-600);
+    padding: 16px 24px;
+    margin-bottom: 56px;
+    height: 264px;
+    display: flex;
+    flex-direction: column;
+}
+
+.exerciseHeader {
+    color: var(--white-light);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.exerciseTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.exerciseDate {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+}
+
+.exerciseList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    padding-right: 24px; /* For scrollbar */
+}
+
+/* Custom Scrollbar */
+.exerciseList::-webkit-scrollbar {
+  width: 6px;
+}
+.exerciseList::-webkit-scrollbar-track {
+  background: #777777;
+  border-radius: 3px;
+}
+.exerciseList::-webkit-scrollbar-thumb {
+  background: var(--primary-300);
+  border-radius: 3px;
+}
+
+.exerciseItem {
+    border-bottom: 1px solid #777777;
+    padding: 8px 0;
+    color: var(--white-light);
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity {
+    display: block;
+    font-family: var(--font-jp);
+}
+
+.calories {
+    color: var(--primary-300);
+    font-size: 15px;
+    margin-top: 2px;
+    font-family: var(--font-en);
+}
+
+.duration {
+    color: var(--primary-300);
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}

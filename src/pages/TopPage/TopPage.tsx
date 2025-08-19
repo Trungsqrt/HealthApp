@@ -111,6 +111,7 @@ export default function TopPage() {
                   stroke="#FFFFFF"
                   tickLine={false}
                   axisLine={false}
+                  fontFamily="'Noto Sans JP', sans-serif"
                 />
                 <YAxis hide={true} domain={[0, "dataMax + 2"]} />
                 <Tooltip contentStyle={{ backgroundColor: "#2E2E2E" }} />

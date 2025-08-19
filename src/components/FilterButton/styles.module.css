@@ -1,0 +1,17 @@
+@import "../../styles/variables.css";
+
+.filterButton {
+    background-color: var(--white-light);
+    color: var(--primary-300);
+    border: none;
+    border-radius: 11px;
+    padding: 2px 24px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: var(--font-jp);
+}
+
+.filterButton.active {
+    background-color: var(--primary-300);
+    color: var(--white-light);
+}

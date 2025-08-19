@@ -1,0 +1,44 @@
+@import "../../styles/variables.css";
+
+.pageContainer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 0;
+}
+
+.recordCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-bottom: 56px;
+}
+
+.chartContainer {
+    background-color: var(--dark-600);
+    padding: 16px 24px;
+    margin-bottom: 56px;
+}
+
+.filterButtons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* Diary Styles */
+.diaryTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.diaryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin: 24px 0 56px;
+}
