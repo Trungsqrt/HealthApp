@@ -1,0 +1,18 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 100px; /* Adjust as needed */
+  right: 20px;
+  z-index: 1000;
+}
+
+.scrollToTop button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.scrollToTop img {
+  width: 48px;
+  height: 48px;
+}

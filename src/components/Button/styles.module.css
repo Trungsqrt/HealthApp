@@ -1,0 +1,14 @@
+@import '../../styles/variables.css';
+
+.button {
+  background-image: linear-gradient(190deg, var(--primary-400), var(--primary-300));
+  color: var(--white-light);
+  border: none;
+  border-radius: 5px;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-family: "Noto Sans JP", sans-serif;
+  cursor: pointer;
+  min-width: 296px;
+  text-align: center;
+}
